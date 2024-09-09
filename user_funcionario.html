@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Funcionário</title>
+    <link rel="icon" href="./ícone/verde_sem_subtitulo.png" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="./login.html"><img src="./ícone/verde_sem_subtitulo.png" alt="Logo"></a> 
+        </div>
+        <div class="nav-links">
+            <a href="./perfil.html"><h2>Perfil</h2></a>
+        </div>
+        <div class="user">
+            <img src="./ícone/pessoa.jpg" alt="User Image">
+        </div>
+    </header>
+    <div class="container">
+        <div class="nome">
+            <h2>Alexandre Henrique Monteiro da Silva</h2>
+            <h2>RM: 524.453.630.828-73</h2>
+        </div>
+        <main>
+            <section class="card-container">
+                <section class="feedback-card">
+                    <h2>Resumo Semanal do Funcionário</h2>
+                    <canvas id="feedbackChart"></canvas>
+                </section>
+                <!-- Seus cards ficam aqui -->
+                <section class="card">
+                    <h2>Batimento Cardíaco</h2>
+                    <div id="heart-rate">-- bpm</div>
+                </section>
+                <section class="card">
+                    <h2>Pressão Arterial</h2>
+                    <div id="blood-pressure">-- mmHg</div>
+                </section>
+                <section class="card">
+                    <h2>Temperatura Corporal</h2>
+                    <div id="body-temperature">-- °C</div>
+                </section>
+                <section class="card">
+                    <h2>Pedômetro</h2>
+                    <div id="step-counter">-- passos</div>
+                </section>
+                <section class="card">
+                    <h2>Frequência de Pausas</h2>
+                    <div id="break-frequency">-- pausas</div>
+                </section>
+                <section class="card">
+                    <h2>Horário de Entrada</h2>
+                    <div id="clock-in">--:--</div>
+                </section>
+                <section class="card">
+                    <h2>Horário de Saída</h2>
+                    <div id="clock-out">--:--</div>
+                </section>
+            </section>
+            <aside class="side-container">
+                <section class="feedback-list">
+                    <h2>Selecione o Gráfico</h2>
+                    <ul id="feedbackOptions">
+                        <li onclick="showChart('healthPatternsChart')">Análise Preditiva de Padrões de Saúde</li>
+                        <li onclick="showChart('productivityWellbeingChart')">Análise Preditiva da Produtividade vs. Bem-Estar</li>
+                    </ul>
+                </section>
+                <section class="feedback-card">
+                    <h2>Análise Preditiva de Padrões de Saúde</h2>
+                    <canvas id="healthPatternsChart"></canvas>
+                </section>
+                <section class="feedback-card">
+                    <h2>Análise Preditiva da Produtividade vs. Bem-Estar</h2>
+                    <canvas id="productivityWellbeingChart"></canvas>
+                </section>
+            </aside>            
+        </main>
+        <footer>
+            <p>© 2024 FocusFlow | Todos os direitos reservados.</p>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

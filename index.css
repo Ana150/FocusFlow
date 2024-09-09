@@ -1,0 +1,307 @@
+/* Cores base */
+:root {
+    --primary-color: #58af9b; /* Azul escuro */
+    --secondary-color: #ffffff; /* Branco */
+    --text-color: rgb(65, 65, 65); /* Preto */
+    --card-background: #f4f4f4; /* Cor de fundo clara para contraste */
+}
+
+.nome {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 5px 40px 5px 30px;
+
+}
+
+/* Fontes */
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Garante que o body ocupe 100% da altura da viewport */
+    overflow: hidden; /* Remove a barra de rolagem do body */
+}
+
+/* Estilos para a notificação de status */
+.status-notification {
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Cores para as mensagens */
+.status-green {
+    background-color: #4CAF50;
+    animation: blink 2s infinite;
+}
+
+.status-yellow {
+    background-color: #FFEB3B;
+    animation: blink 2s infinite;
+}
+
+.status-red {
+    background-color: #F44336;
+    animation: blink 2s infinite;
+}
+
+
+
+.nome h2{
+    max-width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 5px 30px 0px 30px;
+}
+
+/* Personalizando a barra de rolagem */
+body::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor de fundo da trilha */
+    border-radius: 10px;
+    padding: 2px; /* Adiciona espaço ao redor do thumb, criando a margem */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #58af9b; /* Cor da barra de rolagem */
+    border-radius: 10px;
+    border: 3px solid #f1f1f1; /* Cor da "margem" ao redor do thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #3e8b7d; /* Cor da barra ao passar o mouse */
+    border: 3px solid #58af9b; /* Bordas ao redor da barra, mantendo a margem */
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Impede que a barra de rolagem apareça no container principal */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: rgb(65, 65, 65);
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    margin-right: 3%;
+    gap: 2%;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.nav-links a {
+    text-decoration: none; /* Remove a sublinha dos links */
+    color: inherit; /* Mantém a cor original do texto */
+}
+
+.nav-links a h2 {
+    margin: 0;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    color: var(--text-color);
+}
+
+/* Efeito de cor ao passar o mouse */
+.nav-links a h2:hover {
+    color: #58af9b; /* Cor de destaque ao passar o mouse */
+}
+
+.user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Torna a imagem redonda */
+    object-fit: cover; /* Ajusta a imagem dentro do círculo */
+}
+
+main {
+    flex: 1;
+    display: flex;
+    padding: 0px 20px 20px 20px;
+    overflow: hidden; /* Remove a barra de rolagem do main */
+}
+
+.card-container, .side-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    max-height: calc(100vh - 160px); /* Ajusta a altura máxima para se ajustar à tela, considerando o espaço ocupado por header e footer */
+    overflow-y: auto; /* Permite rolagem nas colunas quando necessário */
+}
+
+.card {
+    background: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+.card h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-weight: 700; /* Usando a fonte Montserrat em negrito */
+}
+
+.card div {
+    font-size: 26px;
+    font-weight: 400; /* Usando a fonte Roboto em negrito */
+    color: rgb(65, 65, 65);
+}
+
+.feedback-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    flex: 1;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.feedback-card canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.feedback-list {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+.feedback-list h2 {
+    color: var(--primary-color);
+}
+
+.feedback-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.feedback-list li {
+    margin-bottom: 10px;
+    background: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    text-align: center;
+}
+
+.feedback-list li {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+.feedback-list li:hover {
+    background-color: #a0e1d2;
+    cursor: pointer;
+    transition: 1s;
+}
+
+footer {
+    text-align: center;
+    padding: 5px;
+    color: #000;
+    background-color: var(--card-background);
+    flex-shrink: 0; /* Garante que o footer não diminua */
+}
+
+.card-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    max-height: 75vh; /* Define a altura máxima */
+    overflow-y: auto;  /* Adiciona a barra de rolagem vertical quando necessário */
+}
+
+/* Personalizando a barra de rolagem */
+.card-container::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+}
+
+.card-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor de fundo da trilha */
+    border-radius: 10px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+    background-color: #58af9b; /* Cor da barra de rolagem */
+    border-radius: 10px;
+    border: 2px solid #f1f1f1; /* Bordas ao redor da barra */
+}
+
+.card-container::-webkit-scrollbar-thumb:hover {
+    background-color: #3e8b7d; /* Cor da barra ao passar o mouse */
+}
+
+.side-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    max-height: 75vh; /* Define a altura máxima */
+    overflow-y: auto;  /* Adiciona a barra de rolagem vertical quando necessário */
+}
+
+/* Personalizando a barra de rolagem */
+.side-container::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+}
+
+.side-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor de fundo da trilha */
+    border-radius: 10px;
+}
+
+.side-container::-webkit-scrollbar-thumb {
+    background-color: #58af9b; /* Cor da barra de rolagem */
+    border-radius: 10px;
+    border: 2px solid #f1f1f1; /* Bordas ao redor da barra */
+}
+
+.side-container::-webkit-scrollbar-thumb:hover {
+    background-color: #3e8b7d; /* Cor da barra ao passar o mouse */
+}
