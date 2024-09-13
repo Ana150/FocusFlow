@@ -1,7 +1,7 @@
 function authenticateUser(username, password) {
     const users = {
-        'funcionario': 'senha123', 
-        'admin': 'admin123'        
+        'alexandre@cix.com': '12345', 
+        'ana@ia.com': '12345'        
     };
 
     return users[username] === password;
@@ -15,7 +15,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 
     if (authenticateUser(username, password)) {
 
-        if (username === 'admin') {
+        if (username === 'ana@ia.com') {
             window.location.href = 'admin-dashboard.html'; 
         } else {
             window.location.href = 'user_funcionario.html';
