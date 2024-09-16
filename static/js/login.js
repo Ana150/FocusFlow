@@ -14,11 +14,12 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const password = document.getElementById('password').value;
 
     if (authenticateUser(username, password)) {
-
         if (username === 'ana@ia.com') {
-            window.location.href = 'admin-dashboard.html'; 
+            // Redireciona para a rota Flask da dashboard admin
+            window.location.href = '/admin'; 
         } else {
-            window.location.href = 'user_funcionario.html';
+            // Redireciona para a rota Flask do perfil do funcionário
+            window.location.href = '/perfil-funcionario';
         }
     } else {
         document.getElementById('error-message').classList.remove('hidden');

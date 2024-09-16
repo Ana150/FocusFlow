@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard do Funcionário</title>
     <link rel="icon" href="./ícone/verde_sem_subtitulo.png" type="image/x-icon">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    <!-- <link rel="stylesheet" href="index.css"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +16,15 @@
 <body>
     <header>
         <div class="logo">
-            <a href="./index.html"><img src="./ícone/verde_sem_subtitulo.png" alt="Logo"></a> 
+            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='ícone/verde_sem_subtitulo.png') }}" alt="Logo"></a>
         </div>
         <div class="nav-links">
-            <a href="./admin-dashboard.html"><h2>Visão Geral</h2></a>
-            <a href="./perfil.html"><h2>Perfil</h2></a>
+            <a href="{{ url_for('circuito') }}"><h2>Monitoramento do Ambiente</h2></a>
+            <a href="{{ url_for('admin') }}"><h2>Visão Geral</h2></a>
+            <a href="{{ url_for('perfil') }}"><h2>Perfil</h2></a>
         </div>
         <div class="user">
-            <img src="./ícone/pessoa.jpg" alt="User Image">
+            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='ícone/pessoa.jpg') }}" alt="Logo"></a>
         </div>
     </header>
     <div class="container">
@@ -91,7 +93,8 @@
             <p>© 2024 FocusFlow | Todos os direitos reservados.</p>
         </footer>
     </div>
-    <script src="index.js"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <!-- <script src="index.js"></script> -->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>

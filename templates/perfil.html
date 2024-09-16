@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus Dados</title>
     <link rel="icon" href="./ícone/verde_sem_subtitulo.png" type="image/x-icon">
-    <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/perfil.css') }}">
+    <!-- <link rel="stylesheet" href="perfil.css"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +41,8 @@
             <p>© 2024 FocusFlow | Todos os direitos reservados.</p>
         </footer>
     </div>
-    <script src="perfil.js"></script>
+    <script src="{{ url_for('static', filename='js/perfil.js') }}"></script>
+    <!-- <script src="perfil.js"></script> -->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>

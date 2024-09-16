@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento de Sensores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .sensor-data {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .sensor-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+        }
+        .sensor-box h2 {
+            margin: 0;
+        }
+        .sensor-box p {
+            font-size: 1.5em;
+            margin: 10px 0 0 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dados dos Sensores</h1>
+
+    <div class="sensor-data">
+        <div class="sensor-box">
+            <h2>Temperatura</h2>
+            <p id="temperature">-- °C</p>
+        </div>
+        <div class="sensor-box">
+            <h2>Umidade</h2>
+            <p id="humidity">-- %</p>
+        </div>
+        <div class="sensor-box">
+            <h2>Luminosidade</h2>
+            <p id="ldr_value">--</p>
+        </div>
+    </div>
+
+    <script>
+        function fetchSensorData() {
+            fetch('/api/get_dados')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('temperature').textContent = data.temperature ? `${data.temperature} °C` : '-- °C';
+                    document.getElementById('humidity').textContent = data.humidity ? `${data.humidity} %` : '-- %';
+                    document.getElementById('ldr_value').textContent = data.ldr_value ? data.ldr_value : '--';
+                })
+                .catch(error => console.error('Erro ao buscar dados:', error));
+        }
+
+        // Atualizar os dados a cada 2 segundos
+        setInterval(fetchSensorData, 2000);
+
+        // Carregar os dados inicialmente
+        fetchSensorData();
+    </script>
+
+</body>
+</html>
